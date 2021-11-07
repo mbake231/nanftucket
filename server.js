@@ -1,14 +1,14 @@
 // server/index.js
 //var cords = require('./data/ack_scon_enrich.json');
 var cords = require('./data/ack_scon_enrich_dedupe_ranked.json');
-
+const path = require('path');
 const express = require("express");
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 
 app.use(function(req, res, next) {
@@ -37,3 +37,8 @@ app.get("/cords", (req, res) => {
       }
       res.end();
     });
+
+
+    console.log('Server up!')
+    console.log('Server up!')
+    console.log('Server up!')
